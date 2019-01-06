@@ -1,0 +1,23 @@
+<odoo>
+
+    <data>
+        <function model="account.journal" name="_update_custom_sequence_name"/>
+    </data>
+
+    <report
+            id="reportid_custom_account_invoices"
+            model="account.invoice"
+            string="Facture ICE"
+            report_type="qweb-pdf"
+            name="sun_invoice_custom.custom_report_invoice"
+            file="sun_invoice_custom.custom_report_invoice"
+            attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+            print_report_name="(object._get_printed_report_name())"
+        />
+
+    <template id="external_layout_standard" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[hasclass('header')]//div[@name='company_address']" position="replace">
+        </xpath>
+    </template>
+
+</odoo>

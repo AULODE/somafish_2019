@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<record id="partner_form_view_details" model="ir.ui.view">
+         <field name="name">Contacts</field>
+         <field name="model">res.partner</field>
+         <field name="type">form</field>
+          <field name="inherit_id" ref="account.view_partner_property_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='property_account_position_id']" position="after">
+	                <field name="tax_identification" />
+	                <field name="trade_register" />
+	                <field name="patent" />
+	                <field name="ice" />
+	            </xpath>
+	            <xpath expr="//group[@name='accounting_entries']" position="after">
+	            
+	            	<group name="coordonees_bancaires" string="Coordonees bancaires">
+	                <field name="bank_name" />
+	                <field name="agence" />
+	                <field name="bank_address" />
+	                <field name="rib" /></group>
+	            </xpath>
+	        </field>
+	    </record>
+    </data>
+</odoo>

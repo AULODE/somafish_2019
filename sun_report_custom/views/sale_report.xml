@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_report_saleorder_document">
+        <t t-call="web.basic_layout">
+    <t t-foreach="docs" t-as="o">
+            <div class="header">
+                <div align="center">
+             <img src='/sun_report_custom/static/src/img/logo.jpg' style="max-height: 100px;" />
+                </div>
+            </div>
+            <div class="footer">
+        <div class="text-center" style="border-top: 1px solid black;">
+              <h4><b> Le meilleur des produits de la mer dans votre assiette !</b></h4>
+        </div>
+         </div>
+        <div class="page">
+              <div class="oe_structure"/>
+            <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td style="text-align: left;" rowspan="2" width="50%">
+                    
+                                        <span t-field="o.partner_id"
+                                            t-field-options='{"widget": "contact", "fields": ["address", "name","phone","mobile"],  "no_marker": true}' />
+                                        
+                             
+                     </td>
+                    <td style="text-align: right;">Date&#160;:&#160;<span t-field="o.date_order"  t-field-options='{"format": "d -MM -y"}'/></td>
+                    </tr>
+                    <tr>
+                    <td>&#160;</td>
+                    </tr>
+                    </tbody>
+            </table>
+            <h1><strong>Bon de livraison</strong></h1><br />
+            <h3> <strong>Origine :    <span t-field="o.name"/></strong></h3>
+
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th class="text-right">P.U</th>
+                        <th class="text-right">Qté</th>
+                        <th class="text-right">Total</th>
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+                    <t t-foreach="o.get_datad()" t-as="l">
+                        <tr>
+                            <td>
+                                <t t-foreach="l['name']" t-as="p">
+                                    <span t-esc="p['1']"/><br/>
+                                </t>                                                               
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="l['unit_price']"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="l['qty']"/>
+                                <span t-esc="l['product_uom']"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-esc="l['price_subtotal']"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+          
+            <div class="row" name="total">
+                <div class="col-xs-4 pull-right">
+                    <table class="table table-condensed">
+                         <tr  t-foreach="o.get_datass()" t-as="l" class="border-black">
+                            <td><strong>Total TTC</strong></td>
+                            <td class="text-right">
+                                <span t-esc="l['total_final']"/>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td>Taxes</td>
+                            <td class="text-right">
+                                <span t-field="doc.amount_tax"
+                                    t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                            </td>
+                        </tr>
+                        <tr class="border-black">
+                            <td><strong>Total</strong></td>
+                            <td class="text-right">
+                                <span t-field="doc.amount_total"
+                                    t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                            </td>
+                        </tr>-->
+                    </table>
+                </div>
+            </div>
+           
+          <div style="background-color:lightgray;text-align:center" ><span  t-field="o.company_id.instruction"/></div><br/> 
+           <div style="border:1px solid black;background:lighgray;padding:5px;"><span t-field="o.company_id.terms_condition"/></div>
+        </div>
+    </t>
+    </t>
+</template>
+    
+
+	<template id="custom_report_saleorder">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<t t-call="sun_report_custom.custom_report_saleorder_document"
+					t-lang="doc.partner_id.lang" />
+			</t>
+		</t>
+	</template>
+
+</odoo>
+

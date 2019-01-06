@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+	   
+    	 <record id="account_payment_form_view" model="ir.ui.view">
+	        <field name="name">account.payment.inherit</field>
+	        <field name="model">account.payment</field>
+	        <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='communication']" position="after">
+	                <field name="discount_number" attrs="{'invisible': [('is_cheque', '!=', True)]}"/>
+					<field name="check_number" attrs="{'invisible': [('is_cheque', '!=', True)]}"/>
+					<field name="credit_card_payment" attrs="{'invisible': [('is_creditcc', '!=', True)]}"/>
+					<field name="bank_transfer_payment" attrs="{'invisible': [('is_bank', '!=', True)]}"/>
+					<field name="is_bank" invisible="1"/>
+					<field name="is_creditcc" invisible="1"/>
+					<field name="is_cheque" invisible="1"/>
+	            </xpath>
+	        </field>
+	    </record>
+	    
+    	 <record id="account_payment_form_extend_view" model="ir.ui.view">
+	        <field name="name">account.payment.inherit</field>
+	        <field name="model">account.payment</field>
+	        <field name="inherit_id" ref="account.view_account_payment_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='communication']" position="after">
+	                <field name="discount_number" attrs="{'invisible': [('is_cheque', '!=', True)]}"/>
+					<field name="check_number" attrs="{'invisible': [('is_cheque', '!=', True)]}"/>
+					<field name="credit_card_payment" attrs="{'invisible': [('is_creditcc', '!=', True)]}"/>
+					<field name="bank_transfer_payment" attrs="{'invisible': [('is_bank', '!=', True)]}"/>
+					<field name="is_bank" invisible="1"/>
+					<field name="is_creditcc" invisible="1"/>
+					<field name="is_cheque" invisible="1"/>
+	            </xpath>
+	        </field>
+	    </record>
+
+        <record id="inherit_account_journal_form_view" model="ir.ui.view">
+            <field name="name">account.journal.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='advanced_settings']" position="inside">
+                    <group>
+                        <field name="journal_type_sel" widget="radio"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

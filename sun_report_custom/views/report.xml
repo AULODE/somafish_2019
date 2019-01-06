@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="custom_action_report_saleorder"
+            string="BL AZUL PESCA"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            file="sun_report_custom.custom_report_saleorder"
+            name="sun_report_custom.custom_report_saleorder"
+            print_report_name="(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)"
+        />
+
+    </data>
+</odoo>
