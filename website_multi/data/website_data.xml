@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="base.module_category_theme" model="ir.module.category">
+            <field name="exclusive" eval="0"/>
+        </record>
+
+        <record id="website.default_website" model="website">
+            <field name="is_default_website" eval="True"/>
+        </record>
+
+        <record id="website.homepage" model="ir.ui.view">
+            <field name="website_id" ref="website.default_website"/>
+            <field name="arch" type="xml">
+                <t name="Home" priority="29" t-name="website.homepage">
+                    <t t-call="website.layout">
+                        <t t-set="pageName" t-value="'homepage'"/>
+                        <div id="wrap" t-att-data-website-domain="website.domain" class="oe_structure oe_empty"/>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <record id="website.homepage_page" model="website.page">
+            <field name="website_ids" eval="[(4, ref('website.default_website'))]" />
+        </record>
+
+        <record id="website.contactus_page" model="website.page">
+            <field name="website_ids" eval="[(4, ref('website.default_website'))]" />
+        </record>
+
+        <record id="website.aboutus_page" model="website.page">
+            <field name="website_ids" eval="[(4, ref('website.default_website'))]" />
+        </record>
+
+        <!-- Multi Website Automated Action Rule -->
+        <record id="multi_website_views_on_create" model="base.automation">
+            <field name="name">Multi Website: multi website rule on create</field>
+            <field name="model_id" ref="base.model_ir_ui_view"/>
+            <field name="state">code</field>
+            <field name="code">model.multi_website_view_rule()</field>
+            <field name="trigger">on_create</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

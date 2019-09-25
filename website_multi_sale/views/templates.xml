@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="products_list_view_inherit" inherit_id="website_sale.products_list_view">
+        <xpath expr="//div[hasclass('oe_product_cart')]" position="attributes">
+            <attribute name="t-att-data-publish">product.website_published and website in product.website_ids and 'on' or 'off'</attribute>
+        </xpath>
+    </template>
+
+</odoo>

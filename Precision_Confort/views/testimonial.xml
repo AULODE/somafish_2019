@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="testimonial" name="Precision comfort">
+            <t t-call="website.layout">
+                <div class="container-fluid breadcrumb">
+                    <div class="row">
+                        <div class="col-md-12 px-15rem">
+                            <h1 class="title">Testimonials</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-7rem">
+                    <div class="text-center cofee-title line-hight1">
+                        What Our
+                        <br/>
+                        <span class="font-weight-bold">Customers Say</span>
+                    </div>
+                </div>
+
+                   <div class="container my-md-5 my-4 members testimonial">
+                    <div class="row">
+
+                         <t t-foreach="testimonials" t-as="testimonial">
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            “<p style="font-size: 26px; " class="font-26 text-center"  t-field="testimonial.comment"/>”
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row align-items-center">
+                                                <div class="col-4">
+                                                    <img class="rounded-circle w-100"
+                                                         t-att-src="'data:image/png;base64,%s' % to_text(testimonial.image_testimonials)"/>
+                                                </div>
+                                                <div class="col-8 pl-0">
+                                                        <p class="name" t-field="testimonial.customer_name"/>
+                                                    <p  t-field="testimonial.customer_company"  style="font-size: 19px;color: #000000;opacity: 0.56;"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+
+                    </div>
+                </div>
+
+                <div class="container my-5">
+                    <div class="row">
+                        <div class="col-md-6  text-md-right text-center default-color font-42">
+                            Submit your testimonial
+                        </div>
+                        <div class="col-md-6 text-md-left text-center">
+                            <button class="btn btn-submit" type="button" data-toggle="modal"
+                                    data-target="#testimonialModel">Submit
+                                <img src="/Precision_Confort/static/src/img/arrow-pointing-to-right-1.png" class="ml-4"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="testimonialModel">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header pb-0">
+                                <h4 class="modal-title"></h4>
+                                <a href="#" class="p-2" data-dismiss="modal">
+                                    <img src="/Precision_Confort/static/src/img/close.png"/>
+                                </a>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body pb-5 mx-5">
+                               <form action="/testimonial/new" method="post"
+                                              class="s_website_form form-horizontal container-fluid mt32"
+                                              enctype="multipart/form-data"
+                                              id="testimonialForm">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <h4 class="title pb-4">Submit your testimonial</h4>
+                                    <div class="form-group form-field">
+                                        <input type="text" class="form-control o_website_form_input" id="name"
+                                               name="name" placeholder="Name" required="1"/>
+                                    </div>
+                                    <div class="form-group form-field">
+                                        <input type="text" class="form-control o_website_form_input" name="product"
+                                               id="product" placeholder="Select Product"/>
+                                    </div>
+                                    <div class="custom-file default-color form-group form-field">
+                                        <label class="custom-file-labels" for="customFile">
+                                            <img src="/Precision_Confort/static/src/img/photo-of-a-landscape.png"
+                                                 class="mr-4"/>
+                                            <span>Upload Your Photo</span>
+                                        </label>
+                                        <input type="file" class="custom-file-input o_website_form_input" name="customFile"
+                                               id="testimonialImg" required="1"/>
+                                    </div>
+                                    <div class="form-group form-field">
+                                        <textarea name="review" class="form-control o_website_form_input"
+                                                  placeholder="Write Review" rows="6"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-lg"
+                                                     style="background-color: black;border-color: black;" >Submit
+                                                    <img src="/Precision_Confort/static/src/img/arrow-right-white.png"
+                                                         class="ml-4"/>
+                                                </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </t>
+              <!-- Submit your testimonial Pupup -->
+                <script>
+                    $("#testimonialImg").change(function() {
+                    filename = this.files[0].name
+                    $('#testimonialModel .custom-file .custom-file-labels span').html(filename);
+                    });
+                </script>
+        </template>
+        <record id="testimonial_page" model="website.page">
+            <field name="url">/testimonial</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="testimonial"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+
+        </record>
+
+
+    </data>
+</odoo>

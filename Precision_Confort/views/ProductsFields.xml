@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+
+    <record id="tt" model="ir.ui.view">
+        <field name="name">product.template.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook/page[@name='notes']"
+                   position="after">
+                <page name='information_website' string="information website">
+                    <group>
+                        <field name="images_ids" widget="many2many_binary" string="Images gallery"/>
+                        <field name="description_general" string="Description general"/>
+                        <field name="features_and_benefits" strinng="Features and Benefits"/>
+                        <field name='images' class="oe_avatar"/>
+                        <field name="img" string="Image Product"/>
+                        <field name="img_detail" string="Image detail"/>
+                        <field name="downloads" widget="many2many_binary"/>
+                        <field name="specifications"/>
+
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

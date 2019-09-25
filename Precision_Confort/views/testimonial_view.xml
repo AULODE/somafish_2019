@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+
+    <record id="testimonial_form" model="ir.ui.view">
+        <field name="name">testimonial.from</field>
+        <field name="model">testimonial</field>
+        <field name="arch" type="xml">
+            <form string="testimonial">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
+                    <button name="confirm_testimonial" string="Confirmer" type="object" states="draft" class="oe_highlight" />
+                </header>
+                <group>
+                      <field name="comment" string="customer say"/>
+                      <field name="image_testimonials" string="Image testimonial "/>
+                      <field name="customer_name" string="name of  customer"/>
+                      <field name="customer_company" string="company of customer"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="testimonial_tree" model="ir.ui.view">
+        <field name="name">testimonial.from</field>
+        <field name="model">testimonial</field>
+        <field name="arch" type="xml">
+            <tree string="testimonial">
+                <field name="comment" string="customer say"/>
+                <field name="image_testimonials" string="Image testimonial "/>
+                <field name="customer_name" string="name of  customer"/>
+                <field name="customer_company" string="company of customer"/>
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id='testimonial_action' model='ir.actions.act_window'>
+        <field name="name">testimonial</field>
+        <field name="res_model">testimonial</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="testimonial_action" parent="website.menu_website_configuration" id="testimonial_id"/>
+</odoo>

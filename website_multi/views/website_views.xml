@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_website_form_inherit" model="ir.ui.view">
+        <field name="name">website.form</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form"/>
+        <field name="arch" type="xml">
+            <field name="website_logo" position="after">
+                <field name="website_code" invisible="True" force_save="1"/>
+                <field name="is_default_website" invisible="True"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_website_tree_inherit" model="ir.ui.view">
+        <field name="name">website.tree</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_lang_id']" position="after">
+                <field name="website_code"/>
+                <field name="is_default_website"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="website.action_website_menu" model="ir.actions.act_window">
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="menu_from" model="ir.ui.view">
+        <field name="name">website.menu.form</field>
+        <field name="model">website.menu</field>
+        <field name="arch" type="xml">
+            <form string="Website menu">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="url"/>
+                    </group>
+                    <group>
+                        <field name="website_id" options="{'no_create': True}"/>
+                        <field name="new_window"/>
+                        <field name="parent_id"/>
+                        <field name="menu_view"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_view_form_extend_inherit">
+        <field name="model">ir.ui.view</field>
+        <field name="inherit_id" ref="website.view_view_form_extend"/>
+        <field name="arch" type="xml">
+            <field name="key" position="after">
+                <field name="is_cloned"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- ir.ui.view search -->
+    <record model="ir.ui.view" id="view_view_search_extend">
+        <field name="model">ir.ui.view</field>
+        <field name="inherit_id" ref="base.view_view_search"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="website_id"/>
+            </field>
+            <xpath expr="//group" position="inside">
+                <filter name="group_website_id" string="Website" domain="[]" context="{'group_by':'website_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

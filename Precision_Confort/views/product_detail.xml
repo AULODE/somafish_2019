@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="product_detail" name="Product Détails">
+            <t t-call="website.layout">
+
+
+                <!--Contain Part-->
+                <div class="container-fluid breadcrumb mb-0">
+                    <div class="row">
+                        <div class="col-md-12 px-15rem">
+                            <h1 class="title">PC Deep</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid px-15rem bg-gray">
+                    <div class="row product-all-tabs">
+                        <div class="col-lg-12 col-md-12 mx-auto text-center">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item col-6 col-lg-2 col-md-4">
+                                    <a class="nav-link active" data-toggle="pill" href="#product">Product</a>
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                    <a class="nav-link" data-toggle="pill" href="#features">Features</a>
+                                </li>
+                                <li class="nav-item col-6 col-lg-2 col-md-4">
+                                    <a class="nav-link" data-toggle="pill" href="#specifications">Specifications</a>
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                    <a class="nav-link" data-toggle="pill" href="#gallery">Gallery</a>
+                                </li>
+                                <li class="nav-item col-6 col-lg-1 col-md-4">
+                                    <a  style="width: 201px;" class="nav-link" data-toggle="pill" href="#size">Size</a>
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                    <a class="nav-link" data-toggle="pill" href="#downloads" style="margin-left: 96px;width: 200px;">Downloads</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid px-15rem">
+                    <div class="row product-all-tabs">
+                        <div class="col-md-12 py-md-5 pt-5">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="product">
+                                    <div class="row">
+                                        <div class="col-md-4 ml-auto">
+                                            <img src="/Precision_Confort/static/src/img/pc-deep-logo.png"
+                                                 class="mb-3 pc-deep-logo"/>
+                                            <p class="my-md-3 mb-0 default-color title-1">HCPCS: XXXX</p>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h2 class="my-3 default-color header-1">Lorem Ipsum is simply dummy text of
+                                                the printing
+                                            </h2>
+                                        </div>
+                                        <div class="col-md-6 d-flex align-items-center">
+                                            <img class="w-100"
+                                                 t-att-src="'data:image/png;base64,%s' % to_text(product.img_detail)"/>
+
+                                        </div>
+                                        <div class="col-md-6 pt-3 pt-md-0">
+                                            <div class="row">
+                                                <t t-foreach="product.images_ids" t-as="image">
+
+                                                    <div class="col-5 pb-md-5 pb-3 px-md-4">
+                                                        <img class="w-100"
+                                                             t-att-src="'data:image/png;base64,%s' % to_text(image.datas)"/>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <button class="btn btn-dealer my-3" type="button">Find A Dealer
+                                                <img src="/Precision_Confort/static/src/img/arrow-right-white.png"
+                                                     class="ml-2"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="features">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2 class="cofee-color title-3">Features and Benefits</h2>
+                                        </div>
+                                        <div class="col-md-7 mb-md-5 order-2 order-md-1 default-color">
+                                            <ul>
+                                                <li>
+                                                    Gel-infused viscoelastic upper
+                                                    foam inside overlay to help keep the skin cool and comfortable
+                                                </li>
+                                                <li>
+                                                    Removable gel overlay designed
+                                                    to stay in place to allow the clinician to modify the base for a
+                                                    custom
+                                                    fit
+                                                </li>
+                                                <li>
+                                                    Ergonomic contour which helps maintain proper posture and reduces
+                                                    fatigue
+                                                </li>
+                                                <li>
+                                                    High-density, high-resilience foam for long lasting support
+                                                </li>
+                                                <li>
+                                                    High-density, high-resilience foam for long lasting support
+                                                </li>
+                                                <li>
+                                                    Deep well to allow deep
+                                                    submersion of the IT and coccyx for great skin protection at these
+                                                    vulnerable points. Also to help prevent sacral sitting and promote
+                                                    proper posture
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-8 col-md-4 mb-md-5 mb-3 mr-auto  ml-auto order-1 order-md-2">
+                                            <img src="/Precision_Confort/static/src/img/PCLite_withbackground.png"
+                                                 class="w-100"/>
+                                        </div>
+
+                                        <div class="col-8 col-md-4 my-md-5 mr-auto ml-auto order-3">
+                                            <img src="/Precision_Confort/static/src/img/PCLite_withbackground.png"
+                                                 class="w-100"/>
+                                        </div>
+                                        <div class="col-md-7 my-md-5 my-3 default-color order-4">
+                                            <ul>
+                                                <li>
+                                                    Super soft silicone gel layer on
+                                                    gel-infused visco insert in the well to envelop the bone structure
+                                                    for
+                                                    superior pressure reduction
+                                                </li>
+                                                <li>
+                                                    Super soft silicone gel insert
+                                                    in overlay which forms to the IT and coccyx for pressure reduction
+                                                    and
+                                                    prevents shearing
+                                                </li>
+                                                <li>
+                                                    HD high-resilience base foam
+                                                    around the gel insert in overlay to help support the greater
+                                                    trochanter
+                                                    and femurs for enhanced pressure reduction
+                                                </li>
+                                                <li>
+                                                    Moisture wicking, four-way
+                                                    stretch, and fluid resistant cover which keeps the person dry and
+                                                    comfortable while allowing them to form into the gel and visco
+                                                    insert
+                                                    properly
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-md-4 mt-4 pt-md-5 pr-md-0 order-5">
+                                            <img src="/Precision_Confort/static/src/img/PCDeepSellSheet.png"
+                                                 class="w-100 shadows"/>
+                                            <p class="title-4 default-color mt-md-5 pt-3 px-3">Lorem
+                                                Ipsum is simply dummy text of the printing and typesetting industry.
+                                                Lorem Ipsum has been the industry's standard dummy text ever since
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4 mt-3 px-md-0 order-7">
+                                            <img src="/Precision_Confort/static/src/img/PCDeepSellSheet-2.png"
+                                                 class="w-100"/>
+                                            <p class="title-4 default-color mt-md-5 pt-3 px-3">Lorem
+                                                Ipsum is simply dummy text of the printing and typesetting industry.
+                                                Lorem Ipsum has been the industry's standard dummy text ever since
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4 mt-3 pt-md-5 pl-md-0 order-7">
+                                            <img src="/Precision_Confort/static/src/img/PCDeepSellSheet-3.png"
+                                                 class="w-100 shadows"/>
+                                            <p class="title-4 default-color mt-md-5 pt-3 px-3">Lorem
+                                                Ipsum is simply dummy text of the printing and typesetting industry.
+                                                Lorem Ipsum has been the industry's standard dummy text ever since
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="specifications">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2 class="cofee-color title-3">Specifications</h2>
+                                            <span t-field="product.specifications" style="font-size: 20px;"/>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="gallery" >
+                                    <div class="container py-5">
+                                        <t t-foreach="product.images_ids" t-as="image">
+                                            <div class="col-md-12 py-5 galleryProductsImg" style="margin-left: 103px;">
+                                                <div class="row py-2">
+                                                    <div class="col-md-6  text-center ">
+                                                        <img class="img-responsive" style="max-height:250px"
+                                                             t-att-src="'data:image/png;base64,%s' % to_text(image.datas)"/>
+                                                    </div>
+                                                    <div class="col-md-6 text-center">
+                                                        <img class="img-responsive" style="max-height:250px"
+                                                             t-att-src="'data:image/png;base64,%s' % to_text(image.datas)"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+
+                                    </div>
+
+
+                                    <!--Curosel For Gallery-->
+                                    <div class="col-md-12 py-5 galleryProducts" style="display:none">
+                                        <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+
+                                                    <img class="d-block w-100"
+                                                         src="/Precision_Confort/static/src/img/IMG_-61.png"
+                                                         alt="First slide" style="max-height:250px"/>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100"
+                                                         src="/Precision_Confort/static/src/img/IMG_-61.png"
+                                                         alt="Second slide" style="max-height:250px"/>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img class="d-block w-100"
+                                                         src="/Precision_Confort/static/src/img/IMG_-61.png"
+                                                         alt="Third slide" style="max-height:250px"/>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls"
+                                               role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls"
+                                               role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--Curosel For Gallery-->
+                                </div>
+
+
+                                <div class="tab-pane" id="size">
+                                    <div class="container py-5">
+
+                                        <div class="col-md-12 py-5">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center" colspan="13">PC Size Chart</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" colspan="13" class="text-center">Width</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" rowspan="13" class="text-center">DEPTH</th>
+                                                        <th scope="row"></th>
+                                                        <th scope="row">14"</th>
+                                                        <th scope="row">15"</th>
+                                                        <th scope="row">16"</th>
+                                                        <th scope="row">17"</th>
+                                                        <th scope="row">18"</th>
+                                                        <th scope="row">19"</th>
+                                                        <th scope="row">20"</th>
+                                                        <th scope="row">21"</th>
+                                                        <th scope="row">22"</th>
+                                                        <th scope="row">23"</th>
+                                                        <th scope="row">24"</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">14"</th>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">15"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">16"</th>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">17"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">18"</th>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">19"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">20"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">21"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">22"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">23"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">23"</th>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                        <td scope="row">CS</td>
+                                                        <td scope="row" class="table-cell-color">SD</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <div class="row">
+                                                <div class="col-md-6 text-center">
+                                                    <div class="d-inline-block border py-1 px-4	table-cell-color">
+                                                        SD
+                                                    </div>
+                                                    <div class="d-inline-block">Standard Size</div>
+                                                </div>
+                                                <div class="col-md-6 text-center ">
+                                                    <div class="d-inline-block border py-1 px-4">CS</div>
+                                                    <div class="d-inline-block">Custom Size</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="downloads" >
+                                        <div class="container py-5">
+                                            <div class="col-md-12 py-5 ">
+                                                <t t-foreach="product.downloads" t-as="download">
+
+                                                    <div class="col-md-6  ">
+                                                        <div class="d-inline-block">
+                                                            <a t-att-href="'/web/content/%i?download=true' % download.id">
+                                                                <img class="img-responsive"
+                                                                     src="/Precision_Confort/static/src/img/pdf.png"
+                                                                     alt="image "/>
+                                                            </a>
+                                                        </div>
+                                                        <div class="d-inline-block">
+                                                            <span>
+                                                                <p style="font-size:14px">
+                                                                    <span t-field="download.name"/>
+                                                                </p>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </t>
+        </template>
+        <record id="product_page_detail" model="website.page">
+            <field name="url">/product_detail</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="product_detail"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+
+        </record>
+
+
+    </data>
+</odoo>

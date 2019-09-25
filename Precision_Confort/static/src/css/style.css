@@ -1,0 +1,1674 @@
+@font-face {
+    font-family: 'Arial';
+    src: url('../fonts/ArialMT.eot');
+    src: url('../fonts/ArialMT.eot?#iefix') format('embedded-opentype'), url('../fonts/ArialMT.woff2') format('woff2'), url('../fonts/ArialMT.woff') format('woff'), url('../fonts/ArialMT.ttf') format('truetype'), url('../fonts/ArialMT.svg#ArialMT') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArialBlack';
+    src: url('../fonts/Arial-Black.eot');
+    src: url('../fonts/Arial-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/Arial-Black.woff2') format('woff2'), url('../fonts/Arial-Black.woff') format('woff'), url('../fonts/Arial-Black.ttf') format('truetype'), url('../fonts/Arial-Black.svg#Arial-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+html,
+body {
+    font-family: Arial;
+
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: unset;
+}
+
+a {
+    color: unset;
+}
+
+.btn:hover {
+    color: #FFFFFF;
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: unset;
+}
+
+.form-control:focus {
+    border-color: unset;
+    outline: 0;
+    box-shadow: unset;
+}
+
+
+/* Common */
+
+.px-15rem {
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+.mt-7rem {
+    margin-top: 7rem !important;
+}
+
+.mt-9rem {
+    margin-top: 9rem !important;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.font-26 {
+    font-size: 26px;
+}
+
+.font-35 {
+    font-size: 35px;
+}
+
+.font-38 {
+    font-size: 38px;
+}
+
+.font-73 {
+    font-size: 73px;
+}
+
+.font-42 {
+    font-size: 42px;
+}
+
+.font-90 {
+    font-size: 90px;
+}
+
+.line-hight1 {
+    line-height: 1;
+}
+
+.bg-gray-light {
+    background-color: #F1F1F1;
+}
+
+.bg-gray {
+    background-color: #E8E8E8;
+}
+
+.dark-gray {
+    color: #707070;
+}
+
+.default-color {
+    color: #3E3A39;
+}
+
+.gray-color {
+    color: #000000;
+    opacity: 0.56;
+}
+
+.cofee-color {
+    color: #837158;
+}
+
+.cofee-title {
+    color: #837158;
+    font-size: 73px;
+}
+
+.cofee-title-1 {
+    color: #837158;
+    font-size: 50px;
+}
+
+.see-all {
+    color: #707070;
+    font-weight: bold;
+    font-size: 26px;
+    text-decoration: underline;
+}
+
+.see-all:hover {
+    color: #707070;
+    font-weight: bold;
+    font-size: 26px;
+    text-decoration: underline;
+}
+
+.title-1 {
+    font-size: 24px;
+}
+
+.title-2 {
+    font-size: 25px;
+    line-height: 1.3
+}
+.title-22 {
+    font-size: 22px;
+    line-height: 1.3
+}
+.title-14 {
+    font-size: 14px;
+}
+.title-12 {
+    font-size: 12px;
+}
+.title-28 {
+    font-size: 28px;
+    line-height: 1.3
+}
+.title-18{
+    font-size: 18px;
+}
+.title-30 {
+    font-size: 30px;
+}
+
+.title-3 {
+    font-size: 40px;
+}
+
+.title-4 {
+    font-size: 20px;
+}
+
+.header-1 {
+    font-size: 50px;
+    font-family: 'ArialBlack';
+    font-weight: 900;
+    line-height: 1;
+}
+.header-2 {
+    font-size: 51px;
+    line-height: 1;
+}
+.header-27 {
+    font-size: 27px;
+}
+.border-dashed{
+    border-top: dashed 1px #C1C1C1;
+}
+
+/* End Common */
+
+.main-bg-bottom {
+       background-image: url(../img/bg-curve-bottom.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% bottom;
+}
+
+.main-bg {
+    background-image: url(../img/bg-curve.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100%  bottom;
+}
+
+.top-part {
+    background-color: #E8E8E8;
+}
+
+.top-part ul {
+    padding-inline-start: 0;
+}
+
+.top-part ul li {
+    list-style: none;
+    display: inline;
+    background-color: #ffffff;
+    padding: 24px 20px;
+    color: #717071;
+    font-size: 17px;
+    transition: 0.6s;
+}
+
+.top-part ul li img {
+    margin-right: 10px;
+}
+
+.top-part ul li:hover {
+    background-color: #E8E8E8;
+}
+
+#menu.navbar .navbar-nav .nav-item {
+    font-size: 22px;
+    color: #3E3A39;
+    transition: 0.3s;
+    padding: 1rem 0rem;
+    min-width: 160px;
+    text-align: center;
+}
+
+#menu.navbar .navbar-nav .nav-item.active,
+#menu.navbar .navbar-nav .nav-item:hover {
+    font-weight: bold;
+}
+
+.home-part-one {
+    background-image: url('../img/main-img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.home-part-one .title {
+    font-weight: bold;
+    font-size: 97px;
+    color: #FFFFFF;
+    text-shadow: 0px 3px 6px #00000087;
+}
+
+.home-part-two .title {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.home-part-two .desc {
+    font-size: 26px;
+}
+
+#footer .subscribe {
+    background-color: #E8E8E8;
+}
+
+#footer .subscribe p,
+#footer .following p {
+    color: #3E3A39;
+    font-size: 20px;
+}
+
+#footer .subscribe h2 {
+    color: #3E3A39;
+    font-size: 56px;
+    font-weight: bold;
+}
+
+#footer .following {
+    background-color: #F6F3F0;
+}
+
+#footer .subscribe-form input::placeholder {
+    color: #C4C4C4
+}
+
+#footer .subscribe-form input {
+    border-radius: 0;
+    padding: 24px;
+    border: 1px solid #707070;
+}
+
+#footer .subscribe-form .subscribe-btn {
+    color: #FFFFFF;
+    font-size: 18px;
+    background-color: #363636;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+.members .card-deck {
+    height: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+}
+
+.members .card-deck .card-body {
+    padding: 1.75rem 1.25rem;
+}
+
+.members .card-deck .card-body p {
+    color: rgba(0, 0, 0, 0.80);
+}
+
+.members .card-deck .card-body:hover p {
+    color: #000000;
+    transition: 0.3s;
+}
+
+.members .card-deck .card {
+    line-height: 1;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.members .card-footer {
+    padding: 0rem 1.25rem 1.75rem;
+    background-color: unset;
+    border: none;
+}
+
+.members .card-deck .card .name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.members .card-deck .card .authority {
+    font-size: 19px;
+    color: #000000;
+    opacity: 0.56;
+}
+
+.testimonial.members .card-deck .card-body p {
+    font-size: 20px;
+}
+
+.btn-submit {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: #363636;
+    border-radius: 0;
+    padding: 1rem 3rem
+}
+
+.contact-form input::placeholder {
+    color: #C4C4C4;
+}
+
+.contact-form .form-group .form-control {
+    border: 1px solid #707070;
+    border-radius: unset;
+    padding: 2.4rem 1rem;
+    font-size: 1.5rem;
+}
+
+.breadcrumb {
+    background-image: url('../img/rectangle.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: unset;
+    border-radius: unset;
+}
+
+.breadcrumb .title {
+    color: #3E3A39;
+    ;
+    font-size: 73px;
+    font-weight: bold;
+    margin: 3.5rem auto;
+}
+
+.pages-logo-precision {
+    min-height: 125px;
+    position: relative;
+}
+
+.pages-logo-precision .navbar-brand {
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    position: absolute;
+    background: #FFFFFF;
+    padding-top: 2rem;
+    top: -57px;
+    padding-bottom:16rem;
+
+
+
+}
+
+.products .title {
+    font-size: 102px;
+}
+
+.products .title-pc-gel {
+    font-size: 102px;
+    background-color: rgba(0, 0, 0, 0.26);
+    padding: 10px;
+}
+
+.products .title-pc-lite {
+    font-size: 102px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    line-height: 1
+}
+
+.products .desc {
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+.products .pc-deep {
+    height: 650px;
+    background-size: 30% 65%, 85% 90%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0% 0%, 100% 100%;
+}
+
+.products .pc-gel {
+    height: 650px;
+    background-image: url(../img/pc-deep.png), url(../img/product-2.png);
+    background-size: 30% 65%, 85% 90%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 100% 0%, 0% 100%;
+}
+
+.products .pc-lite {
+    height: 650px;
+    background-image: url(../img/pc-lite.png), url(../img/pruduct-3.png);
+    background-size: 30% 65%, 85% 90%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0% 0%, 100% 100%;
+}
+
+.more-btn {
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #363636;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+.btn-dealer {
+    color: #FFFFFF;
+    font-size: 18px;
+    background-color: #363636;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+#testimonialModel .modal-content {
+    border-radius: unset;
+}
+
+#testimonialModel .modal-content .title {
+    color: #3E3A39;
+    font-size: 42px;
+}
+
+#testimonialModel .modal-header {
+    border: unset;
+    border-radius: unset;
+}
+
+#testimonialModel .modal-dialog {
+    max-width: 600px;
+}
+
+#mapForm input::placeholder,
+#precision-contact-us-form input::placeholder,
+#precision-contact-us-form textarea::placeholder,
+#testimonialModel #testimonialForm input::placeholder,
+#testimonialModel #testimonialForm textarea::placeholder {
+    color: #C4C4C4;
+}
+
+#mapForm input,
+#precision-contact-us-form input,
+#precision-contact-us-form textarea,
+#testimonialModel #testimonialForm input,
+#testimonialModel #testimonialForm textarea {
+    border: 1px solid #707070;
+    border-radius: unset;
+    padding: 1.3rem;
+}
+#mapForm select{
+    border: 1px solid #707070;
+    border-radius: unset;
+}
+
+#testimonialForm .custom-file {
+    margin: 1rem 0rem 2rem 0rem;
+}
+
+#testimonialForm .custom-file .custom-file-input {
+    cursor: pointer;
+}
+
+#testimonialForm .custom-file .custom-file-labels {
+    position: absolute;
+}
+
+
+/* Products tabs*/
+
+#product-tabs .nav.nav-pills .nav-item,
+.product-all-tabs .nav.nav-pills .nav-item {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#product-tabs .nav.nav-pills .nav-item .nav-link {
+    color: #3E3A39;
+    font-size: 25px;
+    padding: .3rem 1rem;
+}
+
+.product-all-tabs .nav.nav-pills .nav-item .nav-link {
+    color: #3E3A39;
+    font-size: 25px;
+    padding: 1.1rem .2rem;
+    border-bottom: transparent 6px solid;
+}
+
+#product-tabs .nav.nav-pills .nav-item:hover .nav-link,
+#product-tabs .nav.nav-pills .nav-item .nav-link.active {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: #DBC9B7;
+    border-radius: 30px;
+    position: absolute;
+    padding: 1.3rem;
+    width: 100%;
+    top: -17px;
+}
+
+.product-all-tabs .nav.nav-pills .nav-item:hover .nav-link,
+.product-all-tabs .nav.nav-pills .nav-item .nav-link.active {
+    border-radius: 0;
+    border-bottom: #DBC9B7 6px solid;
+    background-color: #FFFFFF;
+    color: #3E3A39;
+    transition: 0.6s;
+}
+
+#product-tabs .nav.nav-pills {
+    border: 1px solid #DEDEDE;
+    border-radius: 20px;
+}
+
+#product-tabs #features ul,
+.product-all-tabs #features ul {
+    padding-inline-start: 20px;
+}
+
+#product-tabs #features ul li,
+.product-all-tabs #features ul li {
+    font-size: 20px;
+}
+
+#product-tabs #features .shadows,
+.product-all-tabs #features .shadows {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    background: #FFFFFF;
+}
+
+
+/* ./Products tabs*/
+
+
+/* Slider */
+
+#productSlider .carousel-indicators {
+    bottom: -55px;
+}
+
+#productSlider .carousel-indicators li {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #3E3A39;
+}
+
+#productSlider .title-4 {
+    font-size: 20px;
+}
+
+#productSlider .arrow-img {
+    width: auto;
+}
+
+
+/* ./ Slider */
+
+
+.social-media {
+    margin: 0;
+    padding: 0;
+    color: #3E3A39;
+}
+
+.social-media li {
+    list-style: none;
+    float: left;
+    font-size: 40px;
+    padding-right: 30px;
+}
+.event-detailBox{
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+}
+.precision-contact-us {
+    height: 550px;
+    background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+    background-size: 39% 100%, 70% 80%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 16% 100%, 100% 50%;
+}
+
+.event-box-gray:hover,.event-box:hover{border-left: #837158 12px solid;}
+.event-box-gray{
+    -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    border-left: #C4C4C4 12px solid;
+    transition: 0.5s;
+    background-color: #FFFFFF;
+}
+.event-box{
+    -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    border-left: #DBC9B7 12px solid;
+    transition: 0.5s;
+    background-color: #FFFFFF;
+}
+
+/*Calendar Style*/
+#calendar .jzdbox1 {
+    width:345px;
+    overflow:hidden; 
+    display:block; 
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+#calendar .jzdcal {
+  padding:0 10px 10px 10px; 
+  box-sizing:border-box!important; 
+  background:#FFFFFF;
+}
+
+#calendar .jzdcalt {
+  font-size:22px;
+  font-weight: 700;
+  margin:18px 0 0 0; 
+  text-align:center; 
+  letter-spacing:1px;
+}
+
+#calendar .jzdcal span.name{
+    font-size:12px;
+    font-weight: 400;
+}
+#calendar .jzdcal span.disabled{
+    color: #D8D8D8;
+}
+#calendar .jzdcal span {
+    font-size:16px; 
+    text-align:center; 
+    width:42px; 
+    height:42px; 
+    display:inline-block; 
+    color: #3E3A39;
+    overflow:hidden; 
+    line-height:40px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#calendar .jzdcal .jzdb:before {
+    opacity:0.3; 
+    content:' ';
+}
+
+#calendar .circle {
+    background: #DBC9B7;
+    border-radius: 15px;
+    color: #FFFFFF !important;
+}
+#calendar .circle-2 {
+    background: #837158;
+    border-radius: 15px;
+    color: #FFFFFF !important;
+}
+#calendar .circle-3 {
+    background: #C4C4C4;
+    border-radius: 15px;
+    color: #FFFFFF !important;
+}
+
+#calendar span[data-title]:hover:after, 
+#calendar div[data-title]:hover:after{
+    font-weight:400; 
+    content:attr(data-title); 
+    position:absolute;  
+    background:#FFFFFF; 
+    color: #837158;
+    padding:5px 10px;
+    z-index:9999; 
+    min-width: auto;
+    max-width: 250px;
+    text-align: left;
+    line-height: 2;
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.16);
+}
+/* ./Calendar Style*/
+
+
+/* Map style */
+#map {
+    min-height: 550px;
+    width: 100%;
+    height: 100%;
+}
+
+.mapformbox{
+    position: absolute;
+    z-index: 1000;
+    left: 60px;
+    top: 45px;
+    background-color: #FFFFFF;
+}
+#mapForm .header .logo img{width: 18px;}
+#mapForm .logo{
+    background-color: #DBC9B7;
+    padding: 14px 25px;
+    margin-right: 25px;
+}
+#mapForm .header{
+    background-color: #707070;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 10px 0px;
+}
+/* ./ Map style */
+
+/* Media Query */
+
+@media (min-width: 1500px) {}
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {}
+
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (max-width: 1920px) and (min-width: 1366px) {
+    #menu.navbar .navbar-nav .nav-item {
+        font-size: 20px;
+    }
+    .px-15rem {
+        padding-left: 13rem;
+        padding-right: 13rem;
+    }
+    .top-part a {
+        font-size: 14px;
+    }
+    .top-part img {
+        width: 1.4rem
+    }
+    .top-part a {
+        font-size: 13px;
+    }
+    .top-part img.map-pin-icon {
+        width: 1rem;
+    }
+    .top-part ul li {
+        padding: 20px 13px;
+    }
+    .navbar-brand .main-logo {
+        width: 11rem;
+    }
+    #menu.navbar .navbar-nav .nav-item {
+        min-width: 137px;
+        font-size: 1.6rem;
+    }
+    .home-part-one .title {
+        font-size: 70px;
+    }
+    .home-part-two .title {
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .container {
+        max-width: 960px;
+    }
+    .container.my-5.home-part-two img {
+        width: 5rem;
+    }
+    .cofee-title {
+        color: #837158;
+        font-size: 3.6rem;
+    }
+    .home-part-two .desc {
+        font-size: 20px;
+    }
+    .font-38 {
+        font-size: 1.5rem;
+    }
+    #productSlider .title-4 {
+        font-size: 17px;
+    }
+    .font-73 {
+        font-size: 3.2rem;
+    }
+    .font-26 {
+        font-size: 20px;
+    }
+    .members .card-deck .card {
+        line-height: 1.2;
+    }
+    .members .card-deck .card .name {
+        font-size: 17px;
+        margin-bottom: 0.5rem;
+    }
+    .members .card-deck .card .authority {
+        font-size: 15px;
+    }
+    .see-all {
+        font-size: 20px;
+    }
+    .see-all:hover {
+        font-size: 21px;
+    }
+    .font-42 {
+        font-size: 30px;
+    }
+    .cofee-title-1 {
+        font-size: 43px;
+    }
+    .title-1 {
+        font-size: 22px;
+    }
+    .header-1 {
+        font-size: 32px;
+    }
+    .title-2 {
+        font-size: 20px;
+    }
+    #footer .subscribe h2 {
+        font-size: 46px;
+    }
+    #product-tabs .nav.nav-pills .nav-item:hover .nav-link,
+    #product-tabs .nav.nav-pills .nav-item .nav-link.active {
+        padding: 1.1rem;
+        top: -14px;
+    }
+    .header-2 {font-size: 40px;}
+    .title-22 {font-size: 17px;}
+    .title-28 {font-size: 25px;}
+    .precision-contact-us {
+        height: 550px;
+        background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+        background-size: 40% 100%, 70% 80%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 16% 100%, 100% 50%;
+    }
+    .precision-contact-us .precesioncomfort{width: 180px;}
+    .precision-contact-us .mertislogo{width: 210px;}
+    .title-30 {font-size: 25px;}
+    .header-27 {font-size: 24px;}
+
+   /* #calendar .jzdbox1 {
+        width:300px;
+    }
+    
+    #calendar .jzdcalt {
+      font-size:22px;
+    }
+    
+    #calendar .jzdcal span.name{
+        font-size:12px;
+        font-weight: 400;
+    }
+    #calendar .jzdcal span {
+        font-size:11px; 
+        width:35px; 
+        height:35px; 
+        line-height:35px;
+        margin-top: 10px;
+    }
+    
+    #calendar span[data-title]:hover:after, 
+    #calendar div[data-title]:hover:after{
+        min-width: auto;
+        max-width: 200px;
+        text-align: left;
+    }*/
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+    #menu.navbar .navbar-nav .nav-item {
+        font-size: 20px;
+    }
+    .font-73 {
+        font-size: 65px;
+    }
+    .px-15rem {
+        padding-left: 13rem;
+        padding-right: 13rem;
+    }
+    #productSlider .title-4 {
+        font-size: 17px;
+    }
+    .cofee-title-1 {
+        font-size: 43px;
+    }
+    .title-1 {
+        font-size: 22px;
+    }
+    .header-1 {
+        font-size: 39px;
+    }
+    #product-tabs .nav.nav-pills .nav-item:hover .nav-link,
+    #product-tabs .nav.nav-pills .nav-item .nav-link.active {
+        padding: 1.1rem;
+        top: -14px;
+    }
+    .btn-dealer {
+        font-size: 15px;
+    }
+    .btn-dealer img {
+        width: 18px;
+    }
+
+    .header-2 {font-size: 40px;}
+    .title-22 {font-size: 17px;}
+    .title-28 {font-size: 25px;}
+    .precision-contact-us {
+        height: 550px;
+        background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+        background-size: 50% 100%, 70% 80%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 8% 100%, 100% 50%;
+    }
+    .precision-contact-us .precesioncomfort{width: 180px;}
+    .precision-contact-us .mertislogo{width: 210px;}
+    .title-30 {font-size: 25px;}
+    .header-27 {font-size: 24px;}
+
+   
+}
+
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .testimonial.members .card-deck .card-body p {
+        font-size: 18px;
+    }
+    .px-15rem {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    #menu.navbar .navbar-nav {
+        display: -webkit-inline-box;
+    }
+    .home-part-one .title {
+        font-size: 65px;
+    }
+    #menu.navbar .navbar-nav .nav-item {
+        font-size: 17px;
+    }
+    .mt-9rem {
+        margin-top: 5rem !important;
+    }
+    .home-part-two .title {
+        font-size: 24px;
+    }
+    .home-part-two .desc {
+        font-size: 20px;
+    }
+    .cofee-title {
+        font-size: 50px;
+    }
+    .font-38 {
+        font-size: 29px;
+    }
+    .font-73 {
+        font-size: 55px;
+    }
+    .font-26 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+    .members .card-deck .card .name {
+        font-size: 18px;
+    }
+    .members .card-deck .card .authority {
+        font-size: 17px;
+    }
+    .font-42 {
+        font-size: 33px;
+    }
+    .font-35 {
+        font-size: 32px;
+    }
+    .font-90 {
+        font-size: 60px;
+    }
+    .btn-submit {
+        font-size: 24px;
+        padding: .5rem 1.5rem;
+    }
+    .btn-submit img {
+        width: 35px;
+    }
+    #footer .subscribe p,
+    #footer .following p {
+        font-size: 18px;
+    }
+    #footer .subscribe h2 {
+        font-size: 33px;
+    }
+    #footer .subscribe-form .subscribe-btn {
+        font-size: 17px;
+        padding: 10px 15px;
+    }
+    #footer .subscribe-form .subscribe-btn img {
+        width: 27px;
+    }
+    .breadcrumb .title {
+        font-size: 55px;
+        margin: 2.7rem auto;
+    }
+    .mt-7rem {
+        margin-top: 5.5rem !important;
+    }
+    .pages-logo-precision .navbar-brand .header-logo-img {
+        width: 128px;
+    }
+    .pages-logo-precision .navbar-brand {
+        /*padding-top: 1.5rem;*/
+        top: -43px;
+    }
+    .pages-logo-precision {
+        min-height: 82px;
+    }
+    .products .desc {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+    .more-btn {
+        font-size: 20px;
+        padding: 9px 20px;
+    }
+    .more-btn img {
+        width: 27px;
+    }
+    .products .pc-deep,
+    .products .pc-gel,
+    .products .pc-lite {
+        height: 500px;
+    }
+    .products .pc-deep {
+        background-size: 33% 55%, 85% 90%;
+    }
+    .products .pc-lite {
+        background-size: 30% 55%, 85% 90%;
+    }
+    .products .pc-gel {
+        background-size: 30% 52%, 85% 90%;
+    }
+    .products .title,
+    .products .title-pc-gel,
+    .products .title-pc-lite {
+        font-size: 70px;
+    }
+    .header-1 {
+        font-size: 25px;
+    }
+    .title-1 {
+        font-size: 20px;
+    }
+    .title-2 {
+        font-size: 18px;
+    }
+    .pc-deep-logo {
+        width: 250px
+    }
+    #product-tabs .nav.nav-pills .nav-item:hover .nav-link,
+    #product-tabs .nav.nav-pills .nav-item .nav-link.active {
+        padding: .8rem;
+        top: -8px;
+        font-size: 18px;
+    }
+    #product-tabs .nav.nav-pills .nav-item .nav-link {
+        font-size: 18px;
+    }
+    .title-3 {
+        font-size: 30px;
+    }
+    #product-tabs #features ul li,
+    .product-all-tabs #features ul li {
+        font-size: 18px;
+    }
+    .title-4 {
+        font-size: 19px;
+        line-height: 1.3;
+    }
+    #testimonialModel .modal-content .title {
+        font-size: 35px;
+    }
+    .product-all-tabs .nav.nav-pills .nav-item .nav-link {
+        font-size: 19px;
+        padding: .7rem .2rem;
+    }
+    #productSlider .title-4 {
+        font-size: 16px;
+        line-height: 1.3
+    }
+    .cofee-title-1 {
+        font-size: 42px;
+    }
+    .btn-dealer {
+        font-size: 15px;
+    }
+    .btn-dealer img {
+        width: 18px;
+    }
+    #productSlider .arrow-img {
+        width: 100%;
+    }
+    .header-2 {font-size: 30px;}
+    .title-22 {font-size: 16px;line-height: 1.4;}
+    .title-28 {font-size: 19px;}
+    .precision-contact-us {
+        height: 550px;
+        background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+        background-size: 50% 87%, 70% 70%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 9% 50%, 100% 50%;
+    }
+    .precision-contact-us .precesioncomfort{width: 150px;}
+    .precision-contact-us .mertislogo{width: 190px;}
+    .title-30 {font-size: 19px;}
+    .header-27 {font-size: 22px;}
+    #mapForm .header {font-size: 15px;padding: 8px 0px;}
+    #mapForm .logo {padding:11px 25px 14px;margin-right: 20px;}
+    #mapForm .logo img{width: 15px;}
+    .title-18 {font-size: 15px;}
+    .mapformbox {
+        position: absolute;
+        z-index: 1000;
+        left: 60px;
+        top: 45px;
+        background-color: #FFFFFF;
+    }
+}
+
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (max-width: 768px) {
+    .px-15rem {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .mt-9rem {
+        margin-top: 3rem !important;
+    }
+    .home-part-two .title {
+        font-size: 23px;
+    }
+    .home-part-two .desc {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    .cofee-title {
+        font-size: 40px;
+    }
+    .font-38 {
+        font-size: 25px;
+    }
+    .font-73 {
+        font-size: 45px;
+    }
+    .font-26 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    .members .card-deck .card .name {
+        font-size: 16px;
+    }
+    .members .card-deck .card .authority {
+        font-size: 16px;
+    }
+
+    .font-42 {
+        font-size: 30px;
+    }
+    .font-35 {
+        font-size: 30px;
+    }
+    .font-90 {
+        font-size: 55px;
+    }
+    .btn-submit {
+        font-size: 22px;
+        padding: .4rem 1.3rem;
+    }
+    .btn-submit img {
+        width: 35px;
+    }
+    #footer .subscribe p,
+    #footer .following p {
+        font-size: 19px;
+    }
+    #footer .subscribe h2 {
+        font-size: 29px;
+    }
+    #footer .subscribe-form .subscribe-btn {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+    #footer .subscribe-form .subscribe-btn img {
+        width: 27px;
+    }
+    .font-20 {
+        font-size: 17px;
+    }
+    .breadcrumb .title {
+        font-size: 40px;
+        margin: 2rem auto;
+    }
+    .mt-7rem {
+        margin-top: 4rem !important;
+    }
+    .pages-logo-precision .navbar-brand .header-logo-img {
+        width: 135px;
+    }
+    .pages-logo-precision {
+        min-height: 80px;
+    }
+    .products .desc {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    .more-btn {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+    .more-btn img {
+        width: 24px;
+    }
+    .products .pc-deep,
+    .products .pc-gel,
+    .products .pc-lite {
+        height: 370px;
+    }
+    .products .pc-deep {
+        background-size: 33% 55%, 85% 90%;
+    }
+    .products .pc-lite {
+        background-size: 30% 55%, 85% 90%;
+    }
+    .products .pc-gel {
+        background-size: 30% 52%, 85% 90%;
+    }
+    .products .title,
+    .products .title-pc-gel,
+    .products .title-pc-lite {
+        font-size: 55px;
+    }
+    .header-1 {
+        font-size: 21px;
+    }
+    .title-1 {
+        font-size: 19px;
+    }
+    .title-2 {
+        font-size: 17px;
+        line-height: 1.2;
+    }
+    .pc-deep-logo {
+        width: 215px
+    }
+    #menu .main-logo {
+        width: 200px;
+    }
+    #product-tabs .nav.nav-pills .nav-item:hover .nav-link,
+    #product-tabs .nav.nav-pills .nav-item .nav-link.active {
+        padding: .9rem;
+        top: -9px;
+        font-size: 20px;
+    }
+    #product-tabs .nav.nav-pills .nav-item .nav-link {
+        font-size: 20px;
+    }
+    .title-3 {
+        font-size: 30px;
+    }
+    #product-tabs #features ul li,
+    .product-all-tabs #features ul li {
+        font-size: 17px;
+    }
+    .title-4 {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    #testimonialModel .modal-content .title {
+        font-size: 31px;
+    }
+    #productSlider .title-4 {
+        font-size: 16px;
+    }
+    .cofee-title-1 {
+        font-size: 38px;
+    }
+    .btn-dealer {
+        font-size: 13px;
+    }
+    .btn-dealer img {
+        width: 15px;
+    }
+    .testimonial.members .card-deck .card-body p {
+        font-size: 18px;
+    }
+    .precision-contact-us {
+        height: 550px;
+        background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+        background-size: 40% 58%, 80% 50%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 3% 50%, 100% 50%;
+    }
+    .precision-contact-us .precesioncomfort{width: 110px;}
+    .precision-contact-us .mertislogo{width: 130px;}
+    .title-30 {font-size: 17px;}
+    .header-27 {font-size: 19px;}
+
+    #mapForm .header {font-size: 15px;padding: 8px 0px;}
+    #mapForm .logo {padding:11px 25px 14px;margin-right: 20px;}
+    #mapForm .logo img{width: 15px;}
+    .title-18 {font-size: 15px;}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .home-part-one .title {
+        font-size: 50px;
+    }
+}
+
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (max-width: 480px) {
+    .top-part ul li {
+        padding: 15px 10px;
+        font-size: 12px;
+    }
+    .top-part {
+        background-color: #FFFFFF;
+    }
+    .top-part ul li img {
+        width: 25px;
+    }
+    .home-part-one .title {
+        font-size: 60px;
+    }
+    #menu.navbar .navbar-nav .nav-item {
+        font-size: 16px;
+        padding: 0rem 0rem;
+    }
+    .home-part-two .title {
+        font-size: 21px;
+    }
+    .home-part-two .desc {
+        font-size: 16px;
+    }
+    .cofee-title {
+        font-size: 30px;
+    }
+    .font-38 {
+        font-size: 25px;
+    }
+    .font-73 {
+        font-size: 35px;
+    }
+    .font-26 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    .members .card-deck {
+        padding-bottom: 0px
+    }
+    .font-42 {
+        font-size: 25px;
+    }
+    .font-35 {
+        font-size: 22px;
+    }
+    .font-90 {
+        font-size: 40px;
+    }
+    .btn-submit {
+        font-size: 18px;
+        padding: .4rem 1.3rem;
+        margin-top: 15px;
+    }
+    .btn-submit img {
+        width: 25px;
+    }
+    #footer .subscribe p,
+    #footer .following p {
+        font-size: 16px;
+    }
+    #footer .subscribe h2 {
+        font-size: 24px;
+    }
+    #footer .subscribe-form .subscribe-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    #footer .subscribe-form .subscribe-btn img {
+        width: 25px;
+    }
+    .font-20 {
+        font-size: 15px;
+    }
+    .breadcrumb .title {
+        font-size: 30px;
+        margin: 1rem auto;
+    }
+    .testimonial.members .card-deck .card-body p {
+        font-size: 17px;
+        line-height: 1.3;
+    }
+    .mt-7rem {
+        margin-top: 3rem !important;
+    }
+    .pages-logo-precision .navbar-brand {
+        position: unset;
+        padding-top: 0rem;
+    }
+    .pages-logo-precision .navbar-brand .header-logo-img {
+        width: 115px;
+    }
+    .pages-logo-precision {
+        min-height: auto;
+    }
+    .products .desc {
+        font-size: 17px;
+        line-height: 1.3;
+    }
+    .more-btn {
+        font-size: 15px;
+        padding: 8px 20px;
+    }
+    .more-btn img {
+        width: 20px;
+    }
+    .products .pc-deep,
+    .products .pc-gel,
+    .products .pc-lite {
+        height: 200px;
+    }
+    .products .pc-deep {
+        background-size: 33% 55%, 85% 90%;
+    }
+    .products .pc-lite {
+        background-size: 30% 55%, 85% 90%;
+    }
+    .products .pc-gel {
+        background-size: 30% 52%, 85% 90%;
+    }
+    .products .title,
+    .products .title-pc-gel,
+    .products .title-pc-lite {
+        font-size: 33px;
+    }
+    .header-1 {
+        font-size: 19px;
+    }
+    .title-1 {
+        font-size: 17px;
+    }
+    .title-2 {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    .cofee-title-1 {
+        font-size: 30px;
+    }
+    .pc-deep-logo {
+        width: 190px
+    }
+    #menu .main-logo {
+        width: 150px;
+    }
+    #product-tabs .nav.nav-pills .nav-item:hover .nav-link,
+    #product-tabs .nav.nav-pills .nav-item .nav-link.active {
+        padding: .9rem;
+        font-size: 18px;
+        position: unset;
+        border-radius: 20px;
+    }
+    #product-tabs .nav.nav-pills .nav-item .nav-link {
+        font-size: 18px;
+    }
+    .title-3 {
+        font-size: 24px;
+    }
+    #product-tabs .nav.nav-pills .nav-item .nav-link {
+        padding: .9rem;
+    }
+    #testimonialModel .modal-content .title {
+        font-size: 22px;
+    }
+    .product-all-tabs .nav.nav-pills .nav-item .nav-link {
+        font-size: 17px;
+        padding: .5rem .2rem;
+    }
+    #productSlider .title-4 {
+        font-size: 16px;
+    }
+    #productSlider .carousel-indicators {
+        bottom: -6px;
+    }
+    #productSlider .arrow-img {
+        width: 30px;
+    }
+    .btn-dealer {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .btn-dealer img {
+        width: 17px;
+    }
+    #product-tabs #features ul li,
+    .product-all-tabs #features ul li {
+        font-size: 15px;
+    }
+    .header-2 {font-size: 26px;}
+    .title-22 {font-size: 17px;}
+    .title-28 {font-size: 19px;}
+    
+    .precision-contact-us {
+        height: 550px;
+        background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+        background-size: 80% 45%, 100% 66%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: 50% 0%, 100% 90%;
+    }
+    .precision-contact-us .precesioncomfort{width: 110px;}
+    .precision-contact-us .mertislogo{width: 130px;}
+    .title-30 {font-size: 17px;}
+    .header-27 {font-size: 17px;}
+
+    #mapForm .header {font-size: 15px;padding: 8px 0px;}
+    #mapForm .logo {padding:11px 25px 14px;margin-right: 20px;}
+    #mapForm .logo img{width: 15px;}
+    .title-18 {font-size: 14px;}
+    .mapformbox {
+        position: unset;
+        z-index: 1;
+        left: unset;
+        top: unset;
+        -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+        -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+        padding-bottom: .3rem;
+    }
+    #map {
+        min-height: 250px;
+        height: 250px;
+        margin-top: .8rem;
+    }
+    #mapForm input{padding: 1rem;   }
+}
+
+@media (max-width: 320px) {
+    .top-part ul li {
+        font-size: 8px;
+    }
+    .top-part ul li img {
+        width: 20px;
+    }
+    .precision-contact-us {
+        height: 550px;
+    background-image: url(../img/contact-rect.png), url(../img/contact-square.png);
+    background-size: 90% 45%, 100% 65%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 0%, 100% 90%;
+    }
+    .precision-contact-us .precesioncomfort{width: 100px;}
+    .precision-contact-us .mertislogo{width: 120px;}
+
+    #calendar .jzdbox1 {
+        width:290px;
+    }
+    #calendar .jzdcal span {
+        font-size:11px; 
+        width:30px; 
+        height:30px; 
+        line-height:30px;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {}
+
+
+/* End Media Query */

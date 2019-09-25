@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pc_deep" model="product.product">
+            <field name="name">PC Deep</field>
+            <field name="type">service</field>
+            <field name="description_general">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                took a galley of type and scrambled it to make a type specimen book. It has survived not
+            </field>
+            <field name="images" type="base64" file="Precision_Confort/static/src/img/product-1.png" />
+            <field name="img" type="base64" file="Precision_Confort/static/src/img/pc-deep.png" />
+
+
+        </record>
+        <record id="pc_gel" model="product.product">
+            <field name="name">PC GEL</field>
+            <field name="type">service</field>
+            <field name="description_general">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                took a galley of type and scrambled it to make a type specimen book. It has survived not
+            </field>
+            <field name="images" type="base64" file="Precision_Confort/static/src/img/product-2.png" />
+            <field name="img" type="base64" file="Precision_Confort/static/src/img/pc-deep.png"/>
+
+
+        </record>
+        <record id="pc_lite" model="product.product">
+            <field name="name">PC Lite</field>
+            <field name="type">service</field>
+            <field name="description_general">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                took a galley of type and scrambled it to make a type specimen book. It has survived not
+            </field>
+            <field name="images" type="base64"  file="Precision_Confort/static/src/img/product-3.png" />
+            <field name="img" type="base64" file="Precision_Confort/static/src/img/pc-lite.png" />
+
+
+        </record>
+
+
+    </data>
+</odoo>

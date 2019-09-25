@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="website.layout_logo_show" inherit_id="website.layout" customize_show="True" name="Show Logo">
+        <xpath expr="//header//a[hasclass('navbar-brand')]" position="replace">
+            <t t-if="website and website.website_logo">
+                <a href="/" class="navbar-brand logo">
+                    <span t-field="website.website_logo" t-options="{'widget': 'image'}" t-att-alt="'Logo of %s' % website.name" t-att-title="website.name" />
+                </a>
+            </t>
+            <t t-else="True">
+                <a href="/" class="navbar-brand logo">
+                    <span t-field="res_company.logo" t-options="{'widget': 'image'}" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" />
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="website_sale.products_add_to_cart" active="False" customize_show="True" name="Add to Cart" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-attf-class">#{'' if request and request.website and request.website.is_shop else 'hidden'}</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('product_price')]" position="inside">
+            <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden" />
+            <t t-if="len(product.product_variant_ids) == 1">
+                <a class="btn btn-default btn-xs a-submit">
+                    <span class="fa fa-shopping-cart" />
+                </a>
+            </t>
+            <t t-if="len(product.product_variant_ids) &gt; 1">
+                <a class="btn btn-default btn-xs" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                    <span class="fa fa-shopping-cart" />
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="products_item_hide_price" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
+            <attribute name="t-attf-class">#{'' if request and request.website and request.website.is_shop else 'hidden'}</attribute>
+        </xpath>
+    </template>
+
+    <template id="product" inherit_id="website_sale.product">
+        <!-- Product Detailed View - Hide "Add To Cart" -->
+        <xpath expr="//form[@action='/shop/cart/update']" position="attributes">
+            <attribute name="t-attf-class">#{'' if request and request.website and request.website.is_shop else 'hidden'}</attribute>
+        </xpath>
+    </template>
+</odoo>

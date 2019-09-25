@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website_form_view" model="ir.ui.view">
+        <field name="name">website.meritusa</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='other']" position='after'>
+                <div name="configuration">
+                    <!-- <separator/> -->
+                    <group name="grp_config" string="Configuration">
+                        <field name="allowed_categ_ids"/>
+                        <field name="allowed_brand_ids" />
+                    </group>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+
+    <record id="website_form_inherit" model="ir.ui.view">
+        <field name="name">website.form</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form"/>
+        <field name="arch" type="xml">
+            <div name="social_media" position="after">
+                <div name="testimonail">
+                    <separator name="testimonial" string="Testimonial"/>
+                    <group name="testimonial">
+                            <field name="testimonial_ids" widget="many2many_tags"/>
+                    </group>
+
+                    <separator name="welcome_mail" string="Email Welcome"/>
+                    <group>
+                        <field name="welcome_mail_template_id"/>
+
+                    </group>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

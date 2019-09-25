@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Assets Frontend -->
+    <template id="asset_frontend1" inherit_id="web.assets_frontend" name="Theme Crafito Frontend">
+        <xpath expr="." position="inside">
+
+            <link rel="stylesheet" href="/Precision_Confort/static/src/css/bootstrap.min.css"/>
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+            <link rel="stylesheet" href="/Precision_Confort/static/src/css/style.css"/>
+            <link rel="stylesheet" href="/Precision_Confort/static/src/css/simple-calendar.css"/>
+            <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"/>
+            <script type="text/javascript" src="/Precision_Confort/static/src/js/jquery.simple-calendar.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery/jquery.browser.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.ba-bbq/jquery.ba-bbq.js"/>
+            <script src="/Precision_Confort/static/src/js/popper.min.js"/>
+            <script src="/Precision_Confort/static/src/js/bootstrap.min.js"/>
+            <script src="/Precision_Confort/static/src/js/store_locater.js"/>
+            <script src="/Precision_Confort/static/src/js/map.js"/>
+            <script type="text/javascript" src="/web/static/lib/es5-shim/es5-shim.min.js"/>
+            <script type="text/javascript" src="/web/static/lib/underscore/underscore.js"/>
+            <script type="text/javascript" src="/web/static/lib/underscore.string/lib/underscore.string.js"/>
+            <script type="text/javascript" src="/web/static/lib/moment/moment.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.ui/jquery-ui.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery/jquery.browser.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.hotkeys/jquery.hotkeys.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.placeholder/jquery.placeholder.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.form/jquery.form.js"/>
+            <script type="text/javascript" src="/web/static/lib/jquery.ba-bbq/jquery.ba-bbq.js"/>
+            <script type="text/javascript"
+                    src="/web/static/lib/jquery.mjs.nestedSortable/jquery.mjs.nestedSortable.js"/>
+            <script src="/web/static/lib/bootstrap/js/affix.js"/>
+            <script src="/web/static/lib/bootstrap/js/alert.js"/>
+            <script src="/web/static/lib/bootstrap/js/button.js"/>
+            <script src="/web/static/lib/bootstrap/js/carousel.js"/>
+            <script src="/web/static/lib/bootstrap/js/collapse.js"/>
+            <script src="/web/static/lib/bootstrap/js/dropdown.js"/>
+            <script src="/web/static/lib/bootstrap/js/modal.js"/>
+            <script src="/web/static/lib/bootstrap/js/tooltip.js"/>
+            <script src="/web/static/lib/bootstrap/js/popover.js"/>
+            <script src="/web/static/lib/bootstrap/js/scrollspy.js"/>
+            <script src="/web/static/lib/bootstrap/js/tab.js"/>
+            <script src="/web/static/lib/bootstrap/js/transition.js"/>
+            <script type="text/javascript"
+                    src="/web/static/lib/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"/>
+            <script type="text/javascript" src="/web/static/lib/select2/select2.js"/>
+            <script type="text/javascript" src="/web/static/lib/clipboard/clipboard.js"/>
+
+        </xpath>
+    </template>
+
+
+</odoo>

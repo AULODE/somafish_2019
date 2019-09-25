@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="website_precision_confort" model="website">
+            <field name="name">Precision Comfort (3.92.214.178)</field>
+            <field name="domain">127.0.0.1</field>
+            <field name="social_twitter">facebook.com</field>
+            <field name="social_facebook">twitter.com</field>
+            <field name="website_logo" type="base64" file="Precision_Confort/static/src/img/logo-1.png"/>
+        </record>
+
+        <template id="precision_confort_homepage" name="home">
+
+            <t t-call="website.layout">
+
+                <div class="container-fluid home-part-one">
+                    <div class="row">
+                        <div class="col-md-4 ml-auto py-md-5">
+                            <img src="/Precision_Confort/static/src/img/home-1.png" class="w-100"/>
+                        </div>
+                        <div class="col-md-6 py-md-5 d-flex align-items-end">
+                            <h1 class="title mb-5 w-100 text-center ">Clinically<br/>Functional
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-5 home-part-two mt-9rem">
+                    <div class="row text-center default-color">
+                        <div class="col-md-4">
+                            <img src="/Precision_Confort/static/src/img/seat.png"/>
+                            <h1 class="title my-4">Comfortable</h1>
+                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/Precision_Confort/static/src/img/reliable.png"/>
+                            <h1 class="title my-4">Reliable</h1>
+                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/Precision_Confort/static/src/img/customizable.png"/>
+                            <h1 class="title my-4">Customizable</h1>
+                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-5">
+                    <div class="text-center cofee-title">
+                        Precision Comfort Product Line
+                    </div>
+                </div>
+
+                <div class="container-fluid home-part-two mt-5 px-15rem">
+                    <div class="row text-center default-color font-38 font-weight-bold">
+                        <div class="col-md-4">
+                            <img src="/Precision_Confort/static/src/img/bed-1.png" class="w-100"/>
+                            <p>PC Deep</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/Precision_Confort/static/src/img/bed-1.png" class="w-100"/>
+                            <p>PC Gel</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/Precision_Confort/static/src/img/bed-2.png" class="w-100"/>
+                            <p>PC Lite</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-5 bg-gray py-4">
+                    <div class="row text-center default-color">
+                        <div class="col-lg-12 font-73">
+                            <p>Mission Statement</p>
+                        </div>
+                        <div class="col-lg-7 mr-auto ml-auto font-26">
+                            <p>It our mission at Precision Comfort to develop and manufacture top quality
+                                seating and positioning products that offer wheelchair users the very best in
+                                design and the latest technology in materials. We at Precision Comfort strive to
+                                keep
+                                our costs in line so that we maintain a solid profit for our providers, as we
+                                understand that this is vital for the long-term care of people who depend on
+                                assistive technology for their wellbeing and quality of life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-5">
+                    <div class="text-center cofee-title line-hight1">
+                        What Our
+                        <br/>
+                        Customers Say
+                    </div>
+                </div>
+
+                <div class="container my-5 members">
+                    <div class="row">
+                        <t t-foreach="website.testimonial_ids" t-as="testimonial">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p class="font-26 text-center" t-field="testimonial.comment"/>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row align-items-center">
+                                                <div class="col-4">
+                                                    <img class="rounded-circle w-100"
+                                                         t-att-src="'data:image/png;base64,%s' % to_text(testimonial.image_testimonials)"/>
+                                                </div>
+                                                <div class="col-8 pl-0">
+                                                    <p class="name" t-field="testimonial.customer_name"/>
+                                                    <p class="authority mb-0" t-field="testimonial.customer_company"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="col-md-12 py-lg-4 text-center">
+                        <a href="/testimonial" class="see-all">See All</a>
+                    </div>
+                </div>
+
+                <!-- Submit your testimonial Pupup -->
+                <!-- <div class="modal" id="testimonialModel1">
+                     <div class="modal-dialog modal-dialog-centered">
+                         <div class="modal-content">
+                             &lt;!&ndash; Modal Header &ndash;&gt;
+                             <div class="modal-header pb-0">
+                                 <h4 class="modal-title"></h4>
+                                 <a href="#" class="p-2" data-dismiss="modal">
+                                     <img src="/Precision_Confort/static/src/img/close.png"/>
+                                 </a>
+                             </div>
+
+                             &lt;!&ndash; Modal body &ndash;&gt;
+                             <div class="modal-body pb-5 mx-5">
+                                 <form action="/testimonial/new" method="post"
+                                       class="s_website_form form-horizontal container-fluid mt32"
+                                       enctype="multipart/form-data"
+                                       id="testimonialForm1">
+                                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                     <h4 class="title pb-4">Submit your testimonial</h4>
+                                     <div class="form-group form-field">
+                                         <input type="text" class="form-control o_website_form_input" id="name"
+                                                name="name" placeholder="Name" required="1"/>
+                                     </div>
+                                     <div class="form-group form-field">
+                                         <input type="text" class="form-control o_website_form_input"
+                                                name="product"
+                                                id="product" placeholder="Select Product"/>
+                                     </div>
+                                     <div class="custom-file default-color form-group form-field">
+                                         <label class="custom-file-labels" for="customFile">
+                                             <img src="/Precision_Confort/static/src/img/photo-of-a-landscape.png"
+                                                  class="mr-4"/>
+                                             <span>Upload Your Photo</span>
+                                         </label>
+                                         <input type="file" class="custom-file-input o_website_form_input"
+                                                name="customFile" id="testimonialImg1"
+                                                accept="application/png" required="1"/>
+                                     </div>
+                                     <div class="form-group form-field">
+                                         <textarea name="review" class="form-control o_website_form_input"
+                                                   placeholder="Write Review" rows="6"></textarea>
+                                     </div>
+                                     <div class="form-group">
+                                         <button type="submit" class="btn btn-primary btn-lg"
+                                                 style="background-color: black;border-color: black;">Submit
+                                             <img src="/Precision_Confort/static/src/img/arrow-right-white.png"
+                                                  class="ml-4"/>
+                                         </button>
+                                     </div>
+
+                                 </form>
+                             </div>
+
+                         </div>
+                     </div>
+                 </div>
+ -->
+
+                <div class="modal" id="testimonialModel">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header pb-0">
+                                <h4 class="modal-title"></h4>
+                                <a href="#" class="p-2" data-dismiss="modal">
+                                    <img src="/Precision_Confort/static/src/img/close.png"/>
+                                </a>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body pb-5 mx-5">
+                                <form action="/testimonial/new" method="post"
+                                      class="s_website_form form-horizontal container-fluid mt32"
+                                      enctype="multipart/form-data"
+                                      id="testimonialForm">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <h4 class="title pb-4">Submit your testimonial</h4>
+                                    <div class="form-group form-field">
+                                        <input type="text" class="form-control o_website_form_input" id="name"
+                                               name="name" placeholder="Name" required="1"/>
+                                    </div>
+                                    <div class="form-group form-field">
+                                        <input type="text" class="form-control o_website_form_input"
+                                               name="product"
+                                               id="product" placeholder="Select Product"/>
+                                    </div>
+                                    <div class="custom-file default-color form-group form-field">
+                                        <label class="custom-file-labels" for="customFile">
+                                            <img src="/Precision_Confort/static/src/img/photo-of-a-landscape.png"
+                                                 class="mr-4"/>
+                                            <span>Upload Your Photo</span>
+                                        </label>
+                                        <input type="file" class="custom-file-input o_website_form_input"
+                                               name="customFile" id="testimonialImg1"
+                                               accept="application/png" required="1"/>
+                                    </div>
+                                    <div class="form-group form-field">
+                                        <textarea name="review" class="form-control o_website_form_input"
+                                                  placeholder="Write Review" rows="6"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg"
+                                                style="background-color: black;border-color: black;">Submit
+                                            <img src="/Precision_Confort/static/src/img/arrow-right-white.png"
+                                                 class="ml-4"/>
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-5">
+                    <div class="row">
+                        <div class="col-md-6  text-md-right text-center default-color font-42">
+                            Submit your testimonial
+                        </div>
+
+                        <div class="col-md-6 text-md-left text-center">
+                            <button class="btn btn-submit" data-toggle="modal" data-target="#testimonialModel">
+                                Submit
+                                <img src="/Precision_Confort/static/src/img/arrow-pointing-to-right-1.png"
+                                     class="ml-4"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-md-5">
+                    <div class="text-center cofee-title">
+                        Contact Us
+                    </div>
+                </div>
+                <div class="container-fluid my-md-5">
+                    <form action="/website_form/" method="post" data-model_name="crm.lead"
+                          class="s_website_form contact-form"
+                          enctype="multipart/form-data" data-editable-form="false">
+                        <div class="row px-15rem">
+                            <div class="col-md-4">
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <input type="text" style="calc(1.5em + .75rem + 8px); font-size: 1.5rem"
+                                           class="form-control o_website_form_input"
+                                           name="contact_name" required="" placeholder="Name"
+                                           t-att-value="request.params.get('contact_name', '')"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group form-field o_website_form_required">
+                                    <input type="text" style="calc(1.5em + .75rem + 8px); font-size: 1.5rem"
+                                           class="form-control o_website_form_input" name="name"
+                                           required="" placeholder="Subject"
+                                           t-att-value="request.params.get('name', '')"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group form-field o_website_form_required_custom">
+                                    <input type="text" style="calc(1.5em + .75rem + 8px); font-size: 1.5rem"
+                                           class="form-control o_website_form_input"
+                                           name="partner_name" required="" placeholder="Company"
+                                           t-att-value="request.params.get('partner_name', '')"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 text-center py-xl-5">
+                                <span type="submit" class="btn btn-submit o_website_form_send"
+                                >Submit
+                                    <img src="/Precision_Confort/static/src/img/arrow-right-white.png"
+                                         class="ml-4"/>
+                                </span>
+                                <span id="o_website_form_result"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="container my-5">
+                    <div class="text-center default-color font-weight-bold font-35">
+                        Call Us
+                    </div>
+                    <div class="text-center default-color font-90">
+                        1800-000-000
+                    </div>
+                </div>
+
+
+            </t>
+
+            <script>
+                $("#testimonialImg1").change(function() {
+                filename = this.files[0].name
+                $('#testimonialModel .custom-file .custom-file-labels span').html(filename);
+                });
+            </script>
+
+        </template>
+
+
+       <!-- <record id="contactus_thanks" model="website.page">
+            <field name="name">Thanks (Contact us)</field>
+            <field name="type">qweb</field>
+            <field name="url">/contact-thank-you</field>
+            <field name="website_published">True</field>
+            <field name="key">website_crm.contactus_thanks</field>
+            <field name="arch" type="xml">
+                <t name="Thanks (Contact us)" t-name="website_crm.contactus_thanks">
+                    <t t-call="website.layout">
+                        <div class="col-lg-12 col-md-12 mx-auto text-center">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item col-6 col-lg-2 col-md-4">
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                </li>
+                                <li class="nav-item col-11 col-lg-4 col-md-8">
+                                    <img style="width: 166px;
+height: 166px;" src="/Precision_Confort/static/src/img/component.png"></img>
+
+                                </li>
+
+                                <li class="nav-item col-6 col-lg-1 col-md-4">
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 mx-auto text-center">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item col-6 col-lg-2 col-md-4">
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                </li>
+                                <li class="nav-item col-11 col-lg-4 col-md-8"
+                                    style="font: Bold 30px/34px Arial; letter-spacing: 0; color: #3E3A39; opacity: 1;">
+                                    <p>Thank You</p>
+
+                                </li>
+
+                                <li class="nav-item col-6 col-lg-1 col-md-4">
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 mx-auto text-center">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item col-6 col-lg-2 col-md-4">
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                </li>
+                                <li class="nav-item col-11 col-lg-4 col-md-8"
+                                    style="font-size: 26px;">
+                                    <p>Your message has be received and we will contacting you shortly</p>
+
+                                </li>
+
+                                <li class="nav-item col-6 col-lg-1 col-md-4">
+                                </li>
+                                <li class="nav-item col-5 col-lg-2 col-md-4">
+                                </li>
+                            </ul>
+                        </div>
+
+
+                      <div class="col-lg-12 col-md-12 mx-auto text-center" style="top: -3px;left: 703px;width: 138px;height: 38px;background: #363636 0% 0% no-repeat padding-box;;opacity: 1;text-align: right;font: Regular 18px/21px Arial;letter-spacing: 0;color: #FFFFFF;opacity: 1;">
+                            <a string="Cancel" type="button"></a>
+                        </div>
+
+
+                    </t>
+                </t>
+            </field>
+        </record>-->
+
+        <record id="precision_confort_homepage_page" model="website.page">
+            <field name="website_published">True</field>
+            <field name="url">/home</field>
+            <field name="view_id" ref="precision_confort_homepage"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+        </record>
+
+        <record id="website_precision_confort" model="website">
+            <field name="homepage_id" ref="precision_confort_homepage_page"/>
+        </record>
+
+
+        <record id="precision_confort_main_menu" model="website.menu">
+            <field name="name">Top Menu</field>
+            <field name="website_id" ref="website_precision_confort"/>
+        </record>
+
+        <record id="precision_confort_menu_homepage" model="website.menu">
+            <field name="name">Home</field>
+            <field name="url">/home</field>
+            <field name="parent_id" ref="precision_confort_main_menu"/>
+            <field name="sequence" type="int">10</field>
+            <field name="website_id" ref="website_precision_confort"/>
+            <field name="page_id" ref="precision_confort_homepage_page"/>
+        </record>
+
+
+        <record id="menu_products" model="website.menu">
+            <field name="name">PRODUCTS</field>
+            <field name="url">/product</field>
+            <field name="website_id" ref="website_precision_confort"/>
+            <field name="parent_id" ref="precision_confort_main_menu"/>
+            <field name="page_id" ref="precision_confort_homepage_page"/>
+        </record>
+
+        <record id="menu_event_precision" model="website.menu">
+            <field name="name">EVENTS</field>
+            <field name="url">/event_precision</field>
+            <field name="website_id" ref="website_precision_confort"/>
+            <field name="parent_id" ref="precision_confort_main_menu"/>
+            <field name="page_id" ref="precision_confort_homepage_page"/>
+        </record>
+
+        <record id="menu_contact_us" model="website.menu">
+            <field name="name">CONTACT US</field>
+            <field name="url">/contactus_precision</field>
+            <field name="website_id" ref="website_precision_confort"/>
+            <field name="parent_id" ref="precision_confort_main_menu"/>
+            <field name="page_id" ref="precision_confort_homepage_page"/>
+        </record>
+
+
+        <record id="contactus_precision_confort" model="ir.ui.view">
+            <field name="name">Contact Us</field>
+            <field name="type">qweb</field>
+            <field name="key">precision_confort.contactus</field>
+            <field name="arch" type="xml">
+                <t name="Contact Us" t-name="precision_confort.contactus">
+                    <t t-call="website.layout">
+                        <div class="container-fluid breadcrumb">
+                            <div class="row">
+                                <div class="col-md-12 px-15rem">
+                                    <h1 class="title">Contact Us</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid mb-lg-5 mt-lg-5 mt-0 mb-0 px-15rem">
+                            <div class="col-xl-11 col-lg-12 mr-xl-auto precision-contact-us row m-0 align-items-center">
+                                <div class="col-lg-4 col-md-5 ml-lg-auto text-center">
+                                    <img src="/Precision_Confort/static/src/img/logo-1.png" class="precesioncomfort"/>
+                                    <p class="title-30 font-weight-bold default-color mb-0 mt-3">By</p>
+                                    <img src="/Precision_Confort/static/src/img/meritslogo.png" class="mertislogo"/>
+                                </div>
+                                <div class="col-lg-5 col-md-7 ml-lg-auto default-color text-left">
+                                    <p class="title-22 font-weight-bold mb-4">Our Address</p>
+                                    <p class="title-22 mb-0">Merits Health Products Inc.</p>
+                                    <p class="title-22 mb-0">104 Southway Lane, Ringgold, GA 30736</p>
+                                    <p class="title-22 mb-0">support@meritsusa.com</p>
+                                    <p class="title-22 font-weight-bold my-4">Call Us</p>
+                                    <p class="title-22 mb-0">Tel:1-239-772-0579 / 1-800-963-7487</p>
+                                    <p class="title-22 mb-0">Fax:1-239-772-3252</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid mb-5 px-15rem">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="header-27 font-weight-bold default-color">Write To Us</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <form action="/website_form/" method="post" data-model_name="crm.lead"
+                                          class="s_website_form contact-form"
+                                          enctype="multipart/form-data" data-editable-form="false">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-4 form-group">
+                                                <input type="text" style="calc(1.5em + .75rem + 8px); font-size: 1.5rem"
+                                                       class="form-control o_website_form_input"
+                                                       name="contact_name" required="" placeholder="Name"
+                                                       t-att-value="request.params.get('contact_name', '')"/>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4 form-group form-field o_website_form_required ">
+                                                <input type="email"
+
+                                                       class="form-control o_website_form_input" name="email_from"
+                                                       required="1" placeholder="Email"
+                                                       t-att-value="request.params.get('email_from', '')"
+                                                />
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4 form-group form-field o_website_form_required ">
+                                                <input type="text"
+                                                       class="form-control o_website_form_input" name="phone"
+                                                       required="1" placeholder="Phone"
+                                                       t-att-value="request.params.get('phone', '')"/>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4 form-group form-field o_website_form_required ">
+                                                <input type="text"
+                                                       class="form-control o_website_form_input" name="name"
+                                                       required="" placeholder="Subject"
+                                                       t-att-value="request.params.get('name', '')"/>
+                                            </div>
+
+
+                                            <div class="col-md-12 col-lg-12 form-group">
+                                                <textarea type="text" class="form-control o_website_form_input"
+                                                          name="description" required=""
+                                                          placeholder="Message description"
+                                                          t-att-value="request.params.get('description', '')"
+                                                          rows="5"></textarea>
+                                            </div>
+                                            <div class="col-md-12 col-lg-12">
+                                                <span class="btn btn-dealer o_website_form_send" type="submit"
+                                                      style="background-color: black;border-color: black;">Submit
+                                                    <img src="/Precision_Confort/static/src/img/arrow-right-white.png"
+                                                         class="ml-4"/>
+                                                </span>
+                                                <span id="o_website_form_result"></span>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+        <record id="contactus_precision_page" model="website.page">
+            <field name="url">/contactus_precision</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="contactus_precision_confort"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+
+        </record>
+
+
+    </data>
+</odoo>

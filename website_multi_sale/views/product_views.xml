@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- No need for Merits USA, will managed through brand and category -->
+    <!-- <record model="ir.ui.view" id="product_template_form_view_inherit">
+        <field name="name">product.template.product.website.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="website_sale.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website_style_ids']" position="after">
+                <field name="website_ids" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record> -->
+
+    <!--<record id="product_public_category_form_view_inherit" model="ir.ui.view">-->
+        <!--<field name="name">product.public.category.form</field>-->
+        <!--<field name="model">product.public.category</field>-->
+        <!--<field name="inherit_id" ref="website_sale.product_public_category_form_view"/>-->
+        <!--<field name="arch" type="xml">-->
+            <!--<xpath expr="//field[@name='sequence']" position="after">-->
+                <!--<field name="website_ids" widget="many2many_tags"/>-->
+            <!--</xpath>-->
+        <!--</field>-->
+    <!--</record>-->
+
+    <!-- <record id="website_sale_pricelist_form_view_inherit" model="ir.ui.view">
+        <field name="name">website_sale.pricelist.form</field>
+        <field name="inherit_id" ref="website_sale.website_sale_pricelist_form_view" />
+        <field name="model">product.pricelist</field>
+        <field name="arch" type="xml">
+            <field name='website_id' position='replace'>
+                <field name="website_ids" string='Allow to use on '
+                       widget="many2many_tags"/>
+            </field>
+        </field>
+    </record> -->
+
+</odoo>

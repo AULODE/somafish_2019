@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="event_precision" name="Events">
+            <t t-call="website.layout">
+                <div class="container-fluid breadcrumb mb-5">
+                    <div class="row">
+                        <div class="col-md-12 px-15rem">
+                            <h1 class="title">Events</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-7rem mb-5 px-15rem">
+                    <div class="row">
+                        <!--<div class="col-xl-4 col-lg-12 text-center mb-5" id="calendar">
+                            <div class="jzdbox1 jzdbasf jzdcal">
+                                <div class="jzdcalt"><t t-esc="month" />, <t t-esc="year" /></div>
+                                <span class="name">M</span>
+                                <span class="name">T</span>
+                                <span class="name">W</span>
+                                <span class="name">T</span>
+                                <span class="name">F</span>
+                                <span class="name disabled">S</span>
+                                <span class="name">S</span>
+
+                                <t t-set="i" t-value="0" />
+                                <t t-foreach="calendar" t-as="day">
+                                    <t t-set="i" t-value="i+1" />
+                                    <t t-if="day==0">
+                                        <span class="jzdb">--><!--BLANK--><!--</span>
+                                    </t>
+                                    <t t-if="day !=0" >
+                                       <t t-if="day in dates" >
+                                           <t t-set="data" t-value="events_recap[day]" />
+                                           <span class="circle" t-att-data-title="data"><t t-esc="day" /></span>
+                                       </t>
+                                        <t t-if="day not in dates" >
+                                            <span><t t-esc="day" /></span>
+
+                                       </t>
+
+                                    </t>
+                                </t>
+                            </div>
+                        </div>-->
+                        <div class="col-xl-4 col-lg-12 text-center mb-5" >*
+                            <t t-set="dates" t-value="dates" />
+                            <t t-set="events"  t-value="events_recap" />
+
+                            <div  id="event-cal-container" class="calendar-container"  t-att-data-dates="dates"
+                              t-att-data-events="events">
+
+                            </div>
+                            <script type="text/javascript" src="/Precision_Confort/static/src/js/jquery.simple-calendar.js"/>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#event-cal-container").simpleCalendar({
+                                        events: eval($('#event-cal-container').data().dates),
+                                        eventsInfo:eval($('#event-cal-container').data().events),
+                                        selectCallback: function(date){
+                                            console.log('date selected '+date);
+                                        }
+                                    });
+
+                                    tippy('.day.event', {
+                                        placement: 'bottom',
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-xl-8 col-lg-12">
+                            <t t-foreach="events_precision" t-as="event_precision">
+
+                                <div class="col-md-12 event-box py-3 cofee-color mb-5">
+                                    <div class="col-md-12 pl-0 mb-2">
+                                        <img class="w-50"
+                                             t-att-src="'data:image/png;base64,%s' % to_text(event_precision.image_id)"/>
+
+
+                                    </div>
+                                    <p class="font-35 mb-1">
+                                        <span t-field="event_precision.name"/>
+                                    </p>
+                                    <p class="title-22 mb-3">
+                                        <span t-field="event_precision.date_begin"/>
+                                        -
+                                        <span t-field="event_precision.date_end"/>
+                                    </p>
+                                    <p class="title-22 mb-3">
+                                        <span t-field="event_precision.address_id"/>
+                                    </p>
+                                    <p class="default-color">
+                                        <span  style="font-size:1.7em" t-field="event_precision.descrip"/>
+                                    </p>
+                                    <a t-attf-href="/events_detail/#{event_precision.id}" class="title-22">Read More</a>
+                                </div>
+                            </t>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </t>
+
+
+        </template>
+        <record id="event_precision_page" model="website.page">
+            <field name="url">/event_precision</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="event_precision"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+
+        </record>
+
+    </data>
+</odoo>

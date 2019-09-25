@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="events_detail" name="Event Détails">
+            <t t-call="website.layout">
+                <!--Contain Part-->
+                <div class="container-fluid breadcrumb mb-5">
+                    <div class="row">
+                        <div class="col-md-12 px-15rem">
+                            <h1 class="title">Events</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-7rem mb-5 px-15rem">
+                    <div class="row default-color">
+                        <div class="col-xl-8 col-md-7 py-md-4 pr-md-4 py-lg-5 pr-lg-5">
+                            <p class="header-2">
+                                <span t-field="event_precision.name"/>
+                            </p>
+                            <p class="title-1">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book. It has survived not only five centuries, but also the leap into electronic
+                                typesetting, remaining essentially unchanged.
+                            </p>
+                            <p class="title-1 font-weight-bold">It was popularised in the 1960s</p>
+                            <p class="title-1">with the release of Letraset sheets containing Lorem Ipsum passages, and
+                                more recently with desktop publishing software like Aldus PageMaker including versions
+                                of Lorem Ipsum.
+                            </p>
+                            <p class="title-1 font-weight-bold">It was popularised in the 1960s</p>
+                            <p class="title-1">with the release of Letraset sheets containing Lorem Ipsum passages, and
+                                more recently with desktop publishing software like Aldus PageMaker including versions
+                                of Lorem Ipsum.
+                            </p>
+                        </div>
+                        <div class="col-xl-4 col-md-5">
+                            <div class="event-detailBox p-4 p-lg-5" style="height: 100%;width: 85%;">
+                                <p class="header-2">Date &amp; Time</p>
+                                <p class="dark-gray title-22">
+                                    <span t-field="event_precision.date_begin"/>
+                                    -
+                                    <span t-field="event_precision.date_end"/>
+                                </p>
+                                <p class="default-color title-28 mb-0 mt-3 mt-xl-5">
+                                    <span t-field="event_precision.address_id.city"/>
+                                </p>
+                                <p class="dark-gray title-22">
+                                    <span t-field="event_precision.address_id.street"/>
+                                </p>
+                                <hr class="border-dashed my-3 my-xl-5"/>
+                                <p class="default-color title-28 mb-0">Organizer</p>
+
+                                <p class="dark-gray title-28 mb-0">
+                                    <span t-field="event_precision.organizer_id.name"/>
+                                </p>
+                                <p class="dark-gray title-22">
+                                    <span t-field="event_precision.organizer_id.email"/>
+                                </p>
+                                <div class="col-xl-9 col-lg-11 mt-xl-4 mt-2 pl-0">
+                                    <img class="w-100"
+                                         t-att-src="'data:image/png;base64,%s' % to_text(event_precision.image_id)"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </t>
+        </template>
+        <record id="event_page_detail" model="website.page">
+            <field name="url">/events_detail</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="events_detail"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+
+        </record>
+
+
+    </data>
+</odoo>

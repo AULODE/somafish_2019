@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="store_locater" name="Store locater">
+            <t t-call="website.layout">
+                <div class="container-fluid breadcrumb">
+                    <div class="row">
+                        <div class="col-md-12 px-15rem">
+                            <h1 class="title">Store Locator</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-7rem mb-5 px-15rem">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-xl-3 col-lg-4 col-md-5 col-12 mapformbox">
+                                <form id="mapForm" class="default-color" onkeydown="return event.key != 'Enter';">
+                                    <div class="row">
+                                        <div class="col-12 header">
+                                            <span class="logo">
+                                                <img src="/Precision_Confort/static/src/img/placeholder-w.svg"/>
+                                            </span>
+                                            Enter your search criteria
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group mt-4">
+                                        <p class="mb-2 title-18">ZIP Code, State or State :</p>
+                                        <input type="text" class="form-control" id="autocomplete" placeholder=""
+                                               oninput="getAddrToLatLong($(this).val());"/>
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <p class="mb-2 title-14">United States
+                                            <a href="#" class="cofee-color title-12">
+                                                <u>Change Country</u>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <p class="mb-2 title-14">Search By:</p>
+                                        <select class="form-control">
+                                            <option value="Subject">Subject</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <p class="mb-2 title-14">Filter By Product Type</p>
+                                        <select class="form-control">
+                                            <option value="Subject">Subject</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var position = ["38.885516", "-77.09327200000001"];
+                    var numDeltas = 100;
+                    function initialize(position) {
+                    var latlng = new google.maps.LatLng(position[0], position[1]);
+                    var myOptions = {
+                    zoom: 15,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true,
+                    styles:
+                    [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#707070"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
+                    };
+                    map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+                    marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: "Latitude:"+position[0]+" | Longitude:"+position[1],
+                    draggable: true,
+                    });
+                    }
+
+                    //Load google map
+                    //google.maps.event.addDomListener(window, 'load', initialize(position));
+
+                    function getAddrToLatLong(address){
+                    //address = "277 Bedford Ave, Brooklyn, NY 11211, USA";
+                    API_KEY = "AIzaSyAwPAtA1MtShveayE4y8Lb-QYn2DZA-wk4";
+                    fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+address+'&amp;key='+API_KEY)
+                    .then(response => response.json())
+                    .then(data => {
+                    const latitude = data.results[0].geometry.location.lat;
+                    const longitude = data.results[0].geometry.location.lng;
+                    initialize([latitude,longitude]);
+                    })
+                    }
+
+                    var autocomplete;
+                    function initAutocomplete() {
+                    autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'), {types:
+                    ['geocode']});
+                    initialize(position);
+                    }
+
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwPAtA1MtShveayE4y8Lb-QYn2DZA-wk4&amp;libraries=places&amp;callback=initAutocomplete"></script>
+
+            </t>
+        </template>
+        <record id="store_page_locater" model="website.page">
+            <field name="url">/store_locater</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="store_locater"/>
+            <field name="website_ids" eval="[(4, ref('website_precision_confort'))]"/>
+
+        </record>
+
+
+    </data>
+</odoo>

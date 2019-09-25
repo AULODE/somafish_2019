@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+testimonial_model_access_right_user,testimonial_model_access_right,model_testimonial,base.group_public,1,1,1,1
+product_model_access_right_user,product_model_access_right,product.model_product_template,base.group_public,1,1,0,0

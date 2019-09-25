@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.website</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website_id']" position="replace"/>
+            <xpath expr="//div[@id='domain_setting']" position="replace">
+                <div class="col-xs-12 col-md-6 o_setting_box" id="domain_setting">
+                    <div class="o_setting_right_pane">
+                        <label string="Website Title"/>
+                        <div class="text-muted">
+                            Name, favicon &amp; theme of your website
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label class="col-md-3 o_light_label" string="Name"/>
+                                <field name="website_id"/>
+                            </div>
+                            <div class="row mt8">
+                                <label class="col-md-3 o_light_label" for="favicon" />
+                                <field name="favicon" widget="image" class="pull-left oe_avatar"/>
+                            </div>
+                            <div class="row">
+                                <label class="col-md-3 o_light_label" for="website_theme_id"/>
+                                <field name="website_theme_id"
+                                       options="{'no_create': True, 'no_open': True}"
+                                        domain="['|', ('category_id', '=', %(base.module_category_theme)d),
+                                           ('category_id.parent_id', '=', %(base.module_category_theme)d)]"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_ui_qweb_view" model="ir.actions.act_window">
+        <field name="name">QWeb Views</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ir.ui.view</field>
+        <field name="view_id" ref="base.view_view_tree"/>
+        <field name="context">{'search_default_type': 'qweb',
+            'search_default_group_website_id': True}
+        </field>
+    </record>
+
+    <record id="action_website_website_list" model="ir.actions.act_window">
+        <field name="name">Websites</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">website</field>
+        <field name="view_id" ref="website.view_website_tree"/>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem name="Websites"
+          id="menu_website_website_list"
+          action="action_website_website_list"
+          parent="website.menu_website_global_configuration"
+          sequence="10"
+          groups="base.group_no_one"/>
+
+    <menuitem name="Menus"
+          id="menu_website_menus_list"
+          action="website.action_website_menu"
+          parent="website.menu_website_global_configuration"
+          sequence="40"
+          groups="base.group_no_one"/>
+
+    <menuitem name="QWeb Views"
+          id="menu_website_qweb_views_list"
+          action="action_ui_qweb_view"
+          parent="website.menu_website_global_configuration"
+          sequence="50"
+          groups="base.group_no_one"/>
+
+</odoo>

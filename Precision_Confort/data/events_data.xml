@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="event1" model="event.event">
+            <field name="name">Boston Abilities Expo 2019</field>
+            <field name="descrip">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </field>
+            <field name="image_id" type="base64" file="Precision_Confort/static/src/img/event.jpeg" />
+            <field name="date_begin"> 15-09-2019</field>
+            <field name="date_end"> 16-09-2019</field>
+            <field name="state">confirm</field>
+        </record>
+
+         <record id="event2" model="event.event">
+            <field name="name">Boston Abilities Expo 2019</field>
+            <field name="descrip">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </field>
+            <field name="image_id" type="base64" file="Precision_Confort/static/src/img/event.jpeg" />
+            <field name="date_begin"> 19-09-2019</field>
+            <field name="date_end"> 19-09-2019</field>
+             <field name="state">confirm</field>
+        </record>
+
+    </data>
+</odoo>
